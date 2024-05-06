@@ -1,0 +1,4 @@
+
+	因为react也有该机制 但是react并没有用 requestidlecallback，说是这个东西经过测试可能会超过16ms，到达20ms，超过16ms绘制就会看起来很卡
+
+	

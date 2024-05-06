@@ -1,0 +1,5 @@
+pnpm -F react-demo dev // 在根目录下执行./react-demo项目的dev指令
+
+pnpm -F vue-demo add common // 将./common作为依赖包安装在./vue-demo中 
+
+pnpm import

@@ -1,0 +1,17 @@
+1、cjs是基于运行时的同步加载，esm时基于编译时的异步加载
+
+// cjs
+if(true){
+  require('xxx')
+}
+
+2、cjs时可以修改值的，esm值时只读的
+
+3、cjs不可用tree shaking ，es支持tree shaking //去掉没使用的包
+
+4、commjs中顶层的this指向这个模块本身，而ES6中顶层的this指向的时undefined
+
+5、import非要参杂在逻辑里面可以使用import函数模式
+
+	
+

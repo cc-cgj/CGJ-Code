@@ -1,0 +1,9 @@
+<title> xx <title>
+
+<meta name="description"  content="xxx">
+
+<meta name="Keywords"  content="xxx">
+
+// 有助于爬虫机器人抓取内容
+
+// 可参考jd.com

@@ -1,0 +1,18 @@
+{
+  "name": "markdown",
+  "version": "1.0.0",
+  "description": "那什么是脚手架？\r 例如:vue-cli Angular CLI  Create React App\r 编写自己的脚手架是指创建一个定制化的工具，用于快速生成项目的基础结构和代码文件，以及提供一些常用的命令和功能。通过编写自己的脚手架，你可以定义项目的目录结构、文件模板，管理项目的依赖项，生成代码片段，以及提供命令行接口等功能",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "commonjs",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "ejs": "^3.1.9",
+    "marked": "^11.1.0"
+  }
+}

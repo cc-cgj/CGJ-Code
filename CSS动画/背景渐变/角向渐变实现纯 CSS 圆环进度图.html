@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>角向渐变实现纯 CSS 圆环进度图</title>
+  <style>
+    body,
+    html {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      background: pink;
+    }
+
+    .g-container {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      margin: auto;
+      border-radius: 50%;
+      box-sizing: border-box;
+      border: 6px solid #444;
+    }
+
+    .g-circle {
+      position: absolute;
+      top: -6px;
+      left: -6px;
+      bottom: -6px;
+      right: -6px;
+      border-radius: 50%;
+      background: conic-gradient(#fc0 0%, transparent 40%, transparent);
+      -webkit-animation: rotate 3s ease-in-out infinite;
+      animation: rotate 3s ease-in-out infinite;
+      transition-origin: 50% 50%;
+    }
+
+    .g-circle::before {
+      content: "";
+      position: absolute; 
+      top: 6px;
+      left: 6px;
+      bottom: 6px;
+      right: 6px;
+      background: #333;
+      border-radius: 50%;
+    }
+
+    .g-circle::after {
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -3px);
+      border-radius: 50%;
+      background: #fc0;
+      box-shadow: 0 0 4px 2px #fc0;
+    }
+
+    @-webkit-keyframes rotate {
+      100% {
+        transform: rotate(-360deg);
+      }
+    }
+
+    @keyframes rotate {
+      100% {
+        transform: rotate(-360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="g-container">
+    <div class="g-circle"></div>
+  </div>
+</body>
+
+</html>

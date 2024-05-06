@@ -1,0 +1,5 @@
+requestIdleCallback(function (IdleDeadline){
+	
+	console.log(IdleDeadline)
+	
+})

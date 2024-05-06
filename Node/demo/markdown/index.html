@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    markdown to html
+  </title>
+  <style>
+    /* Markdown通用样式 */
+
+    /* 设置全局字体样式 */
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* 设置标题样式 */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: 1.3em;
+      margin-bottom: 0.6em;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: 2.2em;
+    }
+
+    h2 {
+      font-size: 1.8em;
+    }
+
+    h3 {
+      font-size: 1.6em;
+    }
+
+    h4 {
+      font-size: 1.4em;
+    }
+
+    h5 {
+      font-size: 1.2em;
+    }
+
+    h6 {
+      font-size: 1em;
+    }
+
+    /* 设置段落样式 */
+    p {
+      margin-bottom: 1.3em;
+    }
+
+    /* 设置链接样式 */
+    a {
+      color: #337ab7;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* 设置列表样式 */
+    ul,
+    ol {
+      margin-top: 0;
+      margin-bottom: 1.3em;
+      padding-left: 2em;
+    }
+
+    /* 设置代码块样式 */
+    pre {
+      background-color: #f7f7f7;
+      padding: 1em;
+      border-radius: 4px;
+      overflow: auto;
+    }
+
+    code {
+      font-family: Consolas, Monaco, Courier, monospace;
+      font-size: 0.9em;
+      background-color: #f7f7f7;
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+    }
+
+    /* 设置引用样式 */
+    blockquote {
+      margin: 0;
+      padding-left: 1em;
+      border-left: 4px solid #ddd;
+      color: #777;
+    }
+
+    /* 设置表格样式 */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 1.3em;
+    }
+
+    table th,
+    table td {
+      padding: 0.5em;
+      border: 1px solid #ccc;
+    }
+
+    /* 添加一些额外的样式，如图片居中显示 */
+    img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* 设置代码行号样式 */
+    pre code .line-numbers {
+      display: inline-block;
+      width: 2em;
+      padding-right: 1em;
+      color: #999;
+      text-align: right;
+      user-select: none;
+      pointer-events: none;
+      border-right: 1px solid #ddd;
+      margin-right: 0.5em;
+    }
+
+    /* 设置代码行样式 */
+    pre code .line {
+      display: block;
+      padding-left: 1.5em;
+    }
+
+    /* 设置代码高亮样式 */
+    pre code .line.highlighted {
+      background-color: #f7f7f7;
+    }
+
+    /* 添加一些响应式样式，适应移动设备 */
+    @media only screen and (max-width: 768px) {
+      body {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      h1 {
+        font-size: 1.8em;
+      }
+
+      h2 {
+        font-size: 1.5em;
+      }
+
+      h3 {
+        font-size: 1.3em;
+      }
+
+      h4 {
+        font-size: 1.1em;
+      }
+
+      h5 {
+        font-size: 1em;
+      }
+
+      h6 {
+        font-size: 0.9em;
+      }
+
+      table {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h3>编写自己的脚手架12</h3>
+<p>那什么是脚手架？
+例如:vue-cli Angular CLI  Create React App
+编写自己的脚手架是指创建一个定制化的工具，用于快速生成项目的基础结构和代码文件，以及提供一些常用的命令和功能。通过编写自己的脚手架，你可以定义项目的目录结构、文件模板，管理项目的依赖项，生成代码片段，以及提供命令行接口等功能</p>
+<p>项目结构：脚手架定义了项目的目录结构，包括源代码、配置文件、静态资源等。
+文件模板：脚手架提供了一些预定义的文件模板，如HTML模板、样式表、配置文件等，以加快开发者创建新文件的速度。
+命令行接口：脚手架通常提供一个命令行接口，通过输入命令和参数，开发者可以执行各种任务，如创建新项目、生成代码文件、运行测试等。
+依赖管理：脚手架可以帮助开发者管理项目的依赖项，自动安装和配置所需的库和工具。
+代码生成：脚手架可以生成常见的代码结构，如组件、模块、路由等，以提高开发效率。
+配置管理：脚手架可以提供一些默认的配置选项，并允许开发者根据需要进行自定义配置。</p>
+<h3>工具介绍</h3>
+<p>哪个前端不想拥有自己的一套脚手架，在这一章节你会学到非常多的第三方库，如</p>
+<p>commander</p>
+<p>Commander 是一个用于构建命令行工具的 npm 库。它提供了一种简单而直观的方式来创建命令行接口，并处理命令行参数和选项。使用 Commander，你可以轻松定义命令、子命令、选项和帮助信息。它还可以处理命令行的交互，使用户能够与你的命令行工具进行交互</p>
+<p>inquirer</p>
+<p>Inquirer 是一个强大的命令行交互工具，用于与用户进行交互和收集信息。它提供了各种丰富的交互式提示（如输入框、选择列表、确认框等），可以帮助你构建灵活的命令行界面。通过 Inquirer，你可以向用户提出问题，获取用户的输入，并根据用户的回答采取相应的操作。</p>
+<p>ora</p>
+<p>Ora 是一个用于在命令行界面显示加载动画的 npm 库。它可以帮助你在执行耗时的任务时提供一个友好的加载状态提示。Ora 提供了一系列自定义的加载动画，如旋转器、进度条等，你可以根据需要选择合适的加载动画效果，并在任务执行期间显示对应的加载状态。</p>
+<p>download-git-repo</p>
+<p>Download-git-repo 是一个用于下载 Git 仓库的 npm 库。它提供了一个简单的接口，可以方便地从远程 Git 仓库中下载项目代码。你可以指定要下载的仓库和目标目录，并可选择指定分支或标签。Download-git-repo 支持从各种 Git 托管平台（如 GitHub、GitLab、Bitbucket 等）下载代码。</p>
+
+</body>
+
+</html>

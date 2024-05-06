@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <img src="./Jay.png" alt="">
+  <script>
+    // 同源策略 协议不同 域名不同 端口不同 那么浏览器就会拒绝该请求
+    // 默认get请求
+    // fetch('http://localhost:3000/info').then(res => res.json()).then(res => {
+    //   console.log(res)
+    // })
+
+    // fetch('http://localhost:3000/info', {
+    //   method: "PATCH"
+    // }).then(res => res.json()).then(res => {
+    //   console.log(res)
+    // })
+
+    // Content-Type默认只支持以下三种，其他类型需要后端设置对应的响应头
+    // cors Content-Type: application/x-www-form-urlencoded(get/ name=1&id=2) | multipart/form-data(new FormData) | text/plain(xxx)
+    // fetch('http://localhost:3000/info', {
+    //   method: "POST",
+    //   headers: {
+    //     'Content-Type': "application/json"
+    //   },
+    //   body: JSON.stringify({ name: "cgj" })
+    // }).then(res => res.json()).then(res => {
+    //   console.log(res)
+    // })
+
+    // 读取后端传递的自定义响应头
+    // fetch('http://localhost:3000/info').then(res => {
+    //   const headers = res.headers
+    //   console.log(`自定义响应头-cgj`, headers.get('cgj'));
+    //   return res.json()
+    // }).then(res => {
+    //   console.log(res)
+    // })
+
+    // SSE
+    // const sse = new EventSource('http://localhost:3000/sse')
+
+    // // 默认是message事件
+    // // sse.addEventListener('message', (e) => {
+    // //   console.log(e);
+    // // })
+
+    // // 自定义事件名
+    // sse.addEventListener('test', (e) => {
+    //   console.log(e.data);
+    // })
+
+  </script>
+</body>
+
+</html>

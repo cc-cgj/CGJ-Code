@@ -1,0 +1,24 @@
+
+主流的PC屏幕刷新率（FPS）大多在60Hz，即1秒钟对屏幕进行60次刷新，平均每次刷新耗时大概是16.6ms。
+
+
+一、第一种情况
+	
+	// 在一帧的输入渲染合成完成后才会有空闲时间，就是16.6ms之内完成输入渲染合成，空闲的时间才会留给 requestIdleCallback
+	
+	1.处理用户的事件，就是event 例如 click，input change 等。
+		
+	2.执行定时器任务
+
+	3.执行 requestAnimationFrame
+
+	4.执行dom 的回流与重绘
+
+	5.计算更新图层的绘制指令
+
+	6.绘制指令合并主线程 如果有空余时间会执行 requestIdleCallback
+
+二、第二种情况
+
+	没有任务执行浏览器会有50ms空闲时间，这个时间段也会执行 requestIdleCallback
+

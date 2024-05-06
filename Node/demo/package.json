@@ -1,0 +1,18 @@
+{
+  "name": "cgj",
+  "version": "1.0.0",
+  "description": "练习node",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:process": "cross-env NODE_ENV=development node process.js"
+  },
+  "author": "cgj",
+  "license": "ISC",
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "http-proxy-middleware": "^2.0.6",
+    "jsdom": "^23.0.1"
+  }
+}

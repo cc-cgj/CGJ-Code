@@ -1,0 +1,13 @@
+一、硬链接
+
+	cmd -->  mklink 
+
+	 mklink /H ying.js index.js  //此时index.js和ying.js这两个文件共享的是一个内存地址
+
+二、软链接
+
+	又称符号链接
+
+	mklink ruan.js index.js //ruan.js相当于时index.js的快捷方式
+	
+	
