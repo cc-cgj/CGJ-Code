@@ -7,6 +7,8 @@ const yaml = fs.readFileSync("./db.config.yaml", "utf8");
 const config = jsyaml.load(yaml);
 const app = express();
 
+app.use(express.json());
+
 const sql = await mysql2.createConnection({
   ...config.db,
 });
@@ -27,6 +29,35 @@ app.get("/user/:id", async (req, res) => {
 });
 
 // 新增
+app.post("/create", async (req, res) => {
+  const { name } = req.body;
+  // await sql.query(`insert into user(x,x,x) values(?,?,?)`, [x,x,x]);
+  await sql.query(`insert into user(name) values(?)`, [name]);
+  res.send({
+    code: 200,
+    msg: "新增成功",
+  });
+});
+
+// 编辑
+app.post("/update", async (req, res) => {
+  const { name, id } = req.body;
+  await sql.query(`update user set name = ? where id = ?`, [name, id]);
+  res.send({
+    code: 200,
+    msg: "编辑成功",
+  });
+});
+
+// 删除
+app.post("/delete", async (req, res) => {
+  const { id } = req.body;
+  await sql.query(`delete from user where id = ?`, [id]);
+  res.send({
+    code: 200,
+    msg: "删除成功",
+  });
+});
 
 const port = 3000;
 

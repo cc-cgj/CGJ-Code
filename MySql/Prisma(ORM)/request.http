@@ -1,0 +1,28 @@
+# POST http://localhost:3000/create HTTP/1.1
+# Content-Type: application/json
+
+# {
+#   "name": "John Doe",
+#   "email": "john@example.com"
+# }
+
+# GET http://localhost:3000 HTTP/1.1
+
+# GET http://localhost:3000/user/1 HTTP/1.1
+
+# POST http://localhost:3000/update HTTP/1.1
+# Content-Type: application/json
+
+# {
+#   "name": "John Doe1",
+#   "email": "john@example2.com",
+#   "id":1
+# }
+
+
+POST http://localhost:3000/delete HTTP/1.1
+Content-Type: application/json
+
+{
+  "id":1
+}

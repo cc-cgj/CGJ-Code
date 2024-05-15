@@ -1,0 +1,22 @@
+{
+  "name": "webpack-dll",
+  "version": "1.0.0",
+  "description": "DLLPlugin 可以将一些不经常变化的第三方库打包成单独的文件，以便于缓存和复用。这样，在应用代码更新时，不需要重新构建这些第三方库，从而提高了构建速度。",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "build:dll": "webpack --config webpack.config.dll.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "acorn": "^8.11.3",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "pinia": "^2.1.7",
+    "vue": "^3.4.27",
+    "vue-router": "^4.3.2"
+  }
+}

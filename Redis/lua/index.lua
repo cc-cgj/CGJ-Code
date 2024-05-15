@@ -1,0 +1,66 @@
+-- 定义全局变量
+-- name = "xiaojia"
+-- name = 1
+-- print(name)
+-- 定义局部变量
+-- do
+--     local localname = "xiaojia1"
+--     print(localname)
+-- end
+-- print(localname)
+-- 定义数组
+-- local array = {1, 2, 3, 4, 5}
+-- print(array[1])
+-- 定义对象
+-- local object = {
+--     name = "xiaojia",
+--     age = 18
+-- }
+-- print(object.name)
+-- 条件语句
+-- if object.age == 18 then
+--     print("18")
+-- elseif object.age == 19 then
+--     print("19")
+-- else
+--     print("else")
+-- end
+-- 函数
+-- function test(value)
+--     print("test", value)
+--     return value
+-- end
+-- print(test(1))
+-- 循环
+-- for i = 1, 10, 2 do
+--     print(i)
+-- end
+-- 迭代数组
+-- array = {10, 20, 30} --数组索引从1开始
+-- for i, v in ipairs(array) do
+--     print(i, v)
+-- end
+-- 迭代对象
+-- local object = {
+--     name = "xiaojia",
+--     age = 18
+-- }
+-- for key, val in pairs(object) do
+--     print(key, val)
+-- end
+-- 引入模块
+-- local M = require("./utils")
+-- print(M.add(1, 2))
+-- print(M.PI)
+-- 操作文件
+-- 读取文件
+-- local file = io.open("./index.txt", "r")
+-- -- 语法糖
+-- -- local file = file:read("*a")
+-- -- *a 表示读取里面所有内容
+-- local content = file.read(file, '*a')
+-- print(content)
+-- 写入文件
+-- local file = io.open("./index.txt", "w")
+-- -- file.write(file, "hello world")
+-- file:write("hello world666")

@@ -1,0 +1,18 @@
+GET http://localhost:3000/user/index?id=1 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSm9obiBEb2UiLCJlbWFpbCI6ImpvaG5AZG9lMTExMS5jb20iLCJpYXQiOjE3MTUyMjI5NDIsImV4cCI6MTcxNTgyNzc0Mn0.XU_4cpmsLkmcZKupy3o2MITQNXQCyQewFQE4ymBNSKA
+
+# POST http://localhost:3000/user/create HTTP/1.1
+# Content-Type: application/json
+
+# {
+#   // "name": "John Doe"
+#    "email": "john@doe1111.com"
+# }
+
+# POST http://localhost:3000/user/login HTTP/1.1
+# Content-Type: application/json
+
+# {
+#   "name": "John Doe",
+#   "email": "john@doe1111.com"
+# }

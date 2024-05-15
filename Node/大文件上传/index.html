@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="file" id="file" accept=".mp4">
+  <script>
+    const file = document.getElementById('file');
+    file.addEventListener('change', (e) => {
+      /** 
+       * file对象原型继承blob，可以通过blob的slice方法进行切片
+      */
+      const file = e.target.files[0]; //file对象
+      console.log(file)
+    })
+
+    /**
+     * live-server启动html，在上传文件会导致重新刷新整个页面（阻止默认事件，冒泡也都无效）
+     * 因为live-server默认监听当前目录下的所有文件，导致服务重启
+     * 使用http-server
+     * 
+    */
+  </script>
+</body>
+
+</html>

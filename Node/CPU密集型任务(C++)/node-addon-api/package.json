@@ -1,0 +1,16 @@
+{
+  "name": "addon-api",
+  "version": "1.0.0",
+  "description": ".node文件的原理就是(window dll) (Mac dylib) (Linux so)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "gypfile": true,
+  "devDependencies": {
+    "node-addon-api": "^8.0.0"
+  }
+}
