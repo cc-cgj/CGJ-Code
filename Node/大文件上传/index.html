@@ -11,12 +11,51 @@
   <input type="file" id="file" accept=".mp4">
   <script>
     const file = document.getElementById('file');
+
+    const chunksFun = (file, size = 1024 * 1024 * 4) => {
+      const chunks = []
+      for (let i = 0; i < file.size; i += size) {
+        chunks.push(file.slice(i, i + size))
+      }
+      return chunks
+    }
+
+    const uploadFiles = (chunks) => {
+      // 1.批量上传，promise.all([api1,...])
+      // 2.formData 方式去上传 file 标识 hash | index
+      const list = []
+      for (let i = 0; i < chunks.length; i++) {
+        const formData = new FormData();
+        formData.append('index', i)
+        formData.append('filename', 'xiezhen')
+        formData.append('file', chunks[i]) //写在后面
+        list.push(fetch('http://localhost:3000/upload', {
+          method: 'POST',
+          body: formData
+        }))
+      }
+      Promise.all(list).then(res => {
+        console.log('上传成功')
+        fetch('http://localhost:3000/merge',{
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            filename: 'xiezhen'
+          })
+        })
+      })
+    }
+
     file.addEventListener('change', (e) => {
       /** 
        * file对象原型继承blob，可以通过blob的slice方法进行切片
       */
       const file = e.target.files[0]; //file对象
-      console.log(file)
+      const chunks = chunksFun(file);
+      uploadFiles(chunks)
+
     })
 
     /**

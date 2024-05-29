@@ -1,0 +1,14 @@
+{
+  "name": "sso-login",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server-dev":"pnpm -F server start",
+    "vue3-dev":"pnpm -F vue3 dev",
+    "react-dev":"pnpm -F react dev"
+  },
+  "author": "",
+  "license": "ISC"
+ 
+}

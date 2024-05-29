@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<img id="img" src="" alt="">
+
+<body>
+  <script>
+    const img = document.getElementById('img');
+    const ws = new WebSocket('ws://localhost:3000');
+    ws.addEventListener('message', (event) => {
+      const data = JSON.parse(event.data);
+      img.src = `data:image/png;base64,${data.base64}`
+      img.style.width = data.width
+      img.style.height = data.height
+    })
+
+    const handler = (e) => {
+      ws.send(JSON.stringify({
+        type: e.type,
+        x: e.clientX,
+        y: e.clientY
+      }))
+    }
+    img.onclick = handler
+    img.ondblclick = handler
+  </script>
+
+</body>
+
+</html>

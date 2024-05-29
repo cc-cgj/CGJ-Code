@@ -1,0 +1,14 @@
+{
+  "name": "virus",
+  "version": "1.0.0",
+  "description": "ClamAV（Clam AntiVirus）是一个开源的跨平台杀毒软件，它专注于检测和清除恶意软件，包括病毒、蠕虫、木马、恶意软件和其他恶意代码。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "clamscan": "^2.2.1"
+  }
+}

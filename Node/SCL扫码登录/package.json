@@ -1,0 +1,17 @@
+{
+  "name": "scl-login",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "SCL (Scan Code Login) 是一种扫码登录的技术，它允许用户通过扫描二维码来进行登录操作。这种登录方式在许多应用和网站中得到广泛应用，因为它简单、方便且安全。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "qrcode": "^1.5.3"
+  }
+}
