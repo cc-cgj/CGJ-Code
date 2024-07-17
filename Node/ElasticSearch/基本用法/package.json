@@ -1,0 +1,15 @@
+{
+  "name": "elastic-search",
+  "version": "1.0.0",
+  "description": "ElasticSearch 是一个开源的、分布式的搜索和分析引擎，特别擅长处理大规模的日志和文本数据。它基于 Apache Lucene 构建，提供了强大的全文本搜索功能和实时的数据分析能力。ElasticSearch 常用于日志和事件数据的实时搜索、分析以及大型文本数据的全文检索。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@elastic/elasticsearch": "^8.14.0"
+  }
+}

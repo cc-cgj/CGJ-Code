@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <ul id="list"></ul>
+    <input type="text" id="input">
+    <button id="send">发送</button>
+    </br>
+    <button id="stop">断开</button>
+  </div>
+  <script>
+    // webSocket
+    // 协议 ws:// wss://
+    // 多一个s就ssl证书
+    const ws = new WebSocket('ws://localhost:3000');
+    // open 连接成功
+    ws.addEventListener('open', (event) => {
+      console.log('连接成功');
+    });
+    let input = document.getElementById('input');
+    let send = document.getElementById('send');
+    let list = document.getElementById('list');
+    send.addEventListener('click', () => {
+      // 发送消息 send
+      if (input.value) {
+        ws.send(input.value);
+        input.value = ""
+      }
+    });
+
+    ws.addEventListener('message', (event) => {
+      let data = JSON.parse(event.data);
+      // if (data.type == 2) {
+        let li = document.createElement('li');
+        li.innerHTML = event.data
+        list.appendChild(li);
+      // }
+    });
+    const stop = document.getElementById('stop');
+    stop.addEventListener('click', () => {
+      // 断开连接
+      ws.close();
+    });
+  </script>
+</body>
+
+</html>

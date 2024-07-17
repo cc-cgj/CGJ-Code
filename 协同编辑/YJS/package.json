@@ -1,0 +1,22 @@
+{
+  "name": "yjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "server": "npx y-websocket"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "quill": "^2.0.2",
+    "y-quill": "^1.0.0",
+    "y-websocket": "^2.0.3",
+    "yjs": "^13.6.18"
+  },
+  "devDependencies": {
+    "vite": "^5.3.1"
+  }
+}

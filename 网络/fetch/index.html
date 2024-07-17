@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <button id="btn">send Fetch</button>
+  <p><button id="stop">中断</button></p>
+  <div>进度：<span id="progress"></span></div>
+  <script>
+
+    const btn = document.querySelector('#btn')
+    const abort = new AbortController()
+
+    function sendFetch() {
+      fetch('http://localhost:3000/api/txt', {
+        signal: abort.signal
+      })
+        .then(async res => {
+          const response = res.clone() //要克隆一个res对象，因为res对象只能读取一次
+          // 获取当前进度
+          const reader = res.body.getReader() //返回一个流
+          // // 获取总进度
+          const total = res.headers.get('content-length')
+          let loaded = 0
+          while (true) {
+            // done 如果为true 说明结束了 如果为false 说明还有数据
+            const { done, value } = await reader.read()
+            if (done) {
+              break
+            } else {
+              loaded += value.length
+            }
+            const progress = document.querySelector('#progress')
+            progress.innerHTML = `${(loaded / total * 100).toFixed(2)}%`
+          }
+          return response.text()
+        })
+        .then(data => {
+          console.log(data)
+        
+        })
+    }
+
+    btn.addEventListener('click', () => {
+      sendFetch()
+      timeoutFn()
+    })
+
+    const stop = document.querySelector('#stop')
+    stop.addEventListener('click', () => {
+      abort.abort()
+    })
+
+    // 超时时间
+    const timeoutFn = (time = 1000) => {
+      setTimeout(() => {
+        abort.abort()
+      }, time)
+    }
+
+  </script>
+</body>
+
+</html>

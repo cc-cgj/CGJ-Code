@@ -54,9 +54,10 @@ app.use("*", (req, res, next) => {
 
 // 预检请求 OPTIONS 请求，这个东西是浏览器发起的
 // 满足以下条件才会发起：
-// 1. Content-Type: application/json
-// 2. 或者是自定义请求头
-// 3. 非普通请求 patch put delete
+// 1. 跨域
+// 2. Content-Type: application/json
+// 3. 或者是自定义请求头
+// 4. 非普通请求 patch put delete
 
 app.get("/info", (req, res) => {
   // 自定义响应头

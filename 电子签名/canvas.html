@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>电子签名</title>
+</head>
+<style>
+  canvas{
+    border: 1px solid #000;
+  }
+</style>
+
+<body>
+  <canvas width="1200" height="400" id="canvas"></canvas>
+  <button id="clear">清空</button>
+  <button id="export">导出</button>
+  <input type="color" id="color">
+</body>
+
+<script>
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  const clear = document.getElementById('clear');
+  const color = document.getElementById('color');
+  const exportBtn = document.getElementById('export');
+
+  // 1. 绘画
+  let isDrawing = false;
+
+  ctx.lineWidth = 5;
+  ctx.strokeStyle = color.value;
+
+  canvas.addEventListener('mousedown', function (e) {
+    isDrawing = true
+    ctx.beginPath();//开始绘制
+    ctx.moveTo(e.pageX - canvas.offsetLeft, e.pageY - canvas.offsetTop); //设置起点
+  });
+  canvas.addEventListener('mousemove', function (e) {
+    if(isDrawing){
+      ctx.lineTo(e.pageX - canvas.offsetLeft, e.pageY - canvas.offsetTop); // 定义运动轨迹
+      ctx.stroke() // 绘制颜色
+    }
+  });
+  canvas.addEventListener('mouseup', function (e) {
+    isDrawing = false
+    ctx.closePath(); // 结束绘制
+  });
+
+  // 颜色选择
+  color.addEventListener('input', function (e) {
+    ctx.strokeStyle = e.target.value
+  });
+
+  // 清空画布
+  clear.addEventListener('click', function (e) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+  });
+
+  // 导出图片
+  exportBtn.addEventListener('click', function (e) {
+    var dataURL = canvas.toDataURL('image/png');
+    var a = document.createElement('a');
+    a.href = dataURL;
+    a.download = 'canvas.png';
+    a.click();
+  });
+
+
+</script>
+</html>

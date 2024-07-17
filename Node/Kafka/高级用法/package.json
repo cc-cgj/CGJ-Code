@@ -1,0 +1,15 @@
+{
+  "name": "kafka2",
+  "version": "1.0.0",
+  "description": "拷贝一份 kafka 完整目录改名为 kafka2\r ![alt text](images/拷贝一份kafka完整目录改名为kafka2.png)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "kafkajs": "^2.2.4"
+  }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>保持宽高的纵横比</title>
+
+  <style>
+    /* 
+      根据包含块计算百分值
+          如上所述，当某些属性被赋予一个百分比值时，它的计算值取决于这个元素的包含块。以这种方式工作的属性包括盒模型属性和偏移属性：
+              1. height、top 及 bottom 属性根据包含块的 height 计算百分比值。
+              2. width、left、right、padding 和 margin 属性根据包含块的 width 计算百分比值。 
+    */
+    .box {
+      width: 50%;
+      background-color: red;
+      margin: 100px auto;
+      /* aspect-ratio: 4 / 3; */
+    }
+
+    .inter {
+      position: relative;
+      padding-top: 75%;
+    }
+
+    .container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="inter">
+      <div class="container"></div>
+    </div>
+  </div>
+</body>
+
+</html>

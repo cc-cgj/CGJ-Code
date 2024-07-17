@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+</head>
+
+<body>
+    <script>
+        console.log(localStorage.getItem('token'))
+        // Bearer不是一定要加的，它只是一个w3c规范
+        fetch('http://localhost:3000/api/list', {
+            headers: {
+                'Authorization':`Bearer ${localStorage.getItem('token')}`
+            }
+        }).then(res => res.json()).then(res => {
+            console.log(res)
+        })
+    </script>
+</body>
+
+</html>

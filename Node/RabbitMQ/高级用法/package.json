@@ -1,0 +1,15 @@
+{
+  "name": "delayed",
+  "version": "1.0.0",
+  "description": "什么是延时消息?",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.10.4"
+  }
+}

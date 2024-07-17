@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // const jsonp = (name) => {
+
+    //   const script = document.createElement('script')
+    //   script.src = `http://localhost:3000/jsonp?callback=${name}`
+    //   document.body.appendChild(script)
+    //   return new Promise(resolve => {
+    //     window[name] = (data) => {
+    //       resolve(data)
+    //     }
+    //   })
+    // }
+
+    // jsonp(`callback${new Date().getTime()}`).then(data => {
+    //   console.log(data)
+    // })
+
+    fetch('http://localhost:3000/json').then(res => res.json()).then(res => {
+      console.log(res)
+    })
+  </script>
+</body>
+
+</html>

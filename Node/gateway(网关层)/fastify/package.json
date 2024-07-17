@@ -1,0 +1,20 @@
+{
+  "name": "fastify-gateway",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/caching": "^8.3.0",
+    "@fastify/http-proxy": "^9.5.0",
+    "@fastify/rate-limit": "^9.1.0",
+    "express": "^4.19.2",
+    "fastify": "^4.27.0",
+    "opossum": "^8.1.4"
+  }
+}

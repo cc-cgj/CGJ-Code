@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    // 1.前端的网络状态如何获取以及对应的事件
+    // true 说明在线，false 说明离线
+    console.log(navigator.onLine)
+    window.addEventListener('online', () => {
+      console.log('网络状态发生了变化，当前网络状态为：', navigator.onLine)
+    })
+    window.addEventListener('offline', () => {
+      console.log('网络状态发生了变化，当前网络状态为：', navigator.onLine)
+    })
+
+    // 2. 如何区分强网和弱网
+    /**
+     * 
+     * 通过 navigator.connection API 能够获取的主要网络连接属性如下：
+     * downlink: 当前网络连接的估计下行速度（单位为 Mbps）
+     * downlinkMax: 设备网络连接最大可能下行速度（单位为 Mbps）
+     * effectiveType: 当前网络连接的估计速度类型（如 slow-2g、2g、3g、4g 等）
+     * rtt: 当前网络连接的估计往返时间（单位为毫秒）
+     * saveData: 是否处于数据节省模式
+     **/
+    console.log(navigator.connection)
+  </script>
+</body>
+
+</html>

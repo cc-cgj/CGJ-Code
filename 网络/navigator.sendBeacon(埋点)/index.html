@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button class="send">发送</button>
+  <script>
+    // window.onerror
+    // window.PromiseRejectionEvent
+    const send = document.querySelector('.send')
+
+    let json = JSON.stringify({ name: "小甲" })
+    let blob = new Blob([json],{
+      // 当请求的凭据模式为'include'时，响应中的' access - control - allow - origin '头的值不得是通配符'*'。
+      // type: 'application/json' //这里会出现跨域，通配符 * ，预检请求 204
+    })
+
+    send.addEventListener('click', () => {
+      const formData = new FormData()
+      formData.append('name', '小甲')
+
+      navigator.sendBeacon('http://localhost:3333/beacon?id=1', blob)
+      // fetch('http://localhost:3333/beacon', {
+      //   method: "POST",
+      //   // headers: {
+      //   //   "Content-Type": "application/json",
+      //   // },
+      //   body: formData
+      // })
+    })
+  </script>
+</body>
+
+</html>

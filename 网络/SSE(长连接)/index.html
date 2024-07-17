@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+  .box{
+    width: 800px;
+    height: 800px;
+    border: 1px solid #000;
+  }
+</style>
+
+<body>
+  <div>
+    <div class="box">
+      <div id="message"></div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('keydown', e => {
+      if (e.keyCode == 13) {
+        const see = new EventSource('http://localhost:3333/api/see')
+        // 如果后端没有设置返回的事件名称，默认就是message
+        see.addEventListener('message', e => {
+          document.getElementById('message').innerHTML += e.data
+        })
+
+        see.addEventListener('lol', e => {
+          document.getElementById('message').innerHTML += e.data
+        })
+      }
+    }
+    )
+  </script>
+</body>
+
+</html>

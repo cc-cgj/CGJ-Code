@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background 实现多行光标效果</title>
+</head>
+<style>
+  :root {
+    --pointerColor: #000;
+  }
+
+  p {
+    display: inline;
+    background: linear-gradient(90deg, transparent, transparent calc(100% - 2px), var(--pointerColor) calc(100% - 2px), var(--pointerColor));
+    animation: colorChange .8s linear infinite;
+    padding-right: 4px;
+  }
+
+  @keyframes colorChange {
+
+    0%,
+    50% {
+      --pointerColor: #000;
+    }
+
+    50%,
+    100% {
+      --pointerColor: transparent;
+    }
+  }
+</style>
+
+<body>
+  <p id="content"></p>
+  <script>
+    const text = 'Lorem ipsum dolor sit amet consectetur adipisicing elit......';
+    const contentElement = document.getElementById('content');
+    let index = 0;
+
+    function addNextCharacter() {
+      if (index < text.length) {
+        contentElement.textContent += text[index];
+        index++;
+        setTimeout(addNextCharacter, Math.random() * 150 + 30);
+      }
+    }
+
+    addNextCharacter();
+  </script>
+
+</body>
+
+</html>

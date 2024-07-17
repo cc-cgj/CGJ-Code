@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div>
+    <div>
+      <span>账号</span> <input id="name" type="text">
+    </div>
+    <div>
+      <span>密码</span> <input id="password" type="password">
+    </div>
+    <button id="btn">登录</button>
+  </div>
+
+  <script>
+    const btn = document.querySelector('#btn')
+    const name = document.querySelector('#name')
+    const password = document.querySelector('#password')
+    btn.addEventListener('click', () => {
+      const data = {
+        name: name.value,
+        password: password.value
+      }
+      fetch('http://localhost:3000/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      }).then(res => res.json()).then(data => {
+        localStorage.setItem('token', res.token)
+        location.href = './list.html'
+      })
+    })
+  </script>
+</body>
+
+</html>

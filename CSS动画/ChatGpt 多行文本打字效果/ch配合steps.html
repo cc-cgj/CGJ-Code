@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ch配合steps</title>
+</head>
+<style>
+  /**
+  CSS 中，ch 单位表示数字 “0” 的宽度。如果字体恰巧又是等宽字体，即每个字符的宽度是一样的，此时 ch 就能变成每个英文字符的宽度，那么 26ch 其实也就是整个字符串的长度。 
+  */
+  h1 {
+    font-family: monospace;
+    width: 26ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(26, end);
+  }
+
+  @keyframes typing {
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 26ch;
+    }
+  }
+</style>
+
+<body>
+  <h1>Pure CSS Typing animation.</h1>
+
+</body>
+
+</html>

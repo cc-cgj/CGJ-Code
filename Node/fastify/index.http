@@ -1,0 +1,27 @@
+# POST http://localhost:3000 HTTP/1.1
+# Host: localhost:3000
+# Content-Type: application/json
+
+# {
+#   "name":"asdsada"
+# }
+
+# POST http://localhost:3000/add HTTP/1.1
+# Host: localhost:3000
+# Content-Type: application/json
+
+# {
+#   "name":"asdsada",
+#   "age":111
+# }
+
+
+
+POST http://localhost:3000/create HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
+
+{
+  "name":"小甲",
+  "age":18
+}
