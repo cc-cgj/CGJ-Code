@@ -21,6 +21,8 @@ app.get("/api/see", (req, res) => {
       res.write(`data: ${arr[current]}\n\n`);
       current++;
     } else {
+      res.write("event: close\n");
+      res.write(`data: \n\n`); //固定格式，必须要抛出`data: \n\n`，否则客户端会接收不到close事件
       clearInterval(timer);
     }
   }, 100);

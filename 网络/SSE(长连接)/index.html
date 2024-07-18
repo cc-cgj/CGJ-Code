@@ -7,8 +7,7 @@
   <title>Document</title>
 </head>
 <style>
-
-  .box{
+  .box {
     width: 800px;
     height: 800px;
     border: 1px solid #000;
@@ -32,6 +31,10 @@
 
         see.addEventListener('lol', e => {
           document.getElementById('message').innerHTML += e.data
+        })
+
+        see.addEventListener('close', e => {
+          see.close()
         })
       }
     }
