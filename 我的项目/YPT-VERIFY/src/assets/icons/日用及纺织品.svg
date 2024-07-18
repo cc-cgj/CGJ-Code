@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>日用及纺织品</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1、经营基本情况" transform="translate(-594, -1229)">
+            <rect fill="#F2F5F8" x="0" y="0" width="1920" height="1702"></rect>
+            <rect id="矩形" fill="#FFFFFF" x="364" y="227" width="1200" height="1355"></rect>
+            <g id="编组-7" transform="translate(381, 994)">
+                <g id="编组-20" transform="translate(196, 222)">
+                    <rect id="ant-input-css-1km3mtt" stroke="#D9D9D9" fill="#FFFFFF" x="0.5" y="0.5" width="148" height="49" rx="6"></rect>
+                    <g id="T-shirt,-empty" transform="translate(17, 13)">
+                        <path d="M12,5.899835 C10.0665,5.899835 8.4999,4.33351934 8.4999,2.4 L6.75,2.4 C5.787,2.4 4.3632,3.03660637 3.5859,3.81391414 L0,7.39985 L3.9999,11.40009 L5.0001,10.39988 L5.0001,22.4 L12,22.4 C12,11.4566038 12,5.95654877 12,5.899835 Z" id="路径" fill="#7E9AFF" fill-rule="nonzero"></path>
+                        <path d="M24,5.899835 C22.0665,5.899835 20.4999,4.33351934 20.4999,2.4 L18.75,2.4 C17.787,2.4 16.3632,3.03660637 15.5859,3.81391414 L12,7.39985 L15.9999,11.40009 L17.0001,10.39988 L17.0001,22.4 L24,22.4 C24,11.4566038 24,5.95654877 24,5.899835 Z" id="路径" fill="#6385FF" fill-rule="nonzero" transform="translate(18, 12.4) scale(-1, 1) translate(-18, -12.4)"></path>
+                        <polygon id="矩形" fill="#FFFFFF" points="13.875 9.19245283 16.875 9.19245283 16.875 12.2113208 15.375 12.7773585 13.875 12.2113208"></polygon>
+                        <path d="M8.4375,2.77735849 C9.0625,4.91572327 10.25,5.98490566 12,5.98490566 C13.75,5.98490566 14.9375,4.91572327 15.5625,2.77735849" id="直线" stroke="#BBCAFF" stroke-width="0.75" stroke-linecap="round"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

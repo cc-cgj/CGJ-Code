@@ -1,0 +1,61 @@
+// .ant-form-item .ant-form-item-label>label {
+// white-space: normal;
+// line-height: 32px;
+// height: auto;
+// align-items: flex-start;
+// display: inline-block;
+// }
+
+.custom-form-item-label {
+
+  .ant-form-item-label>label {
+    height: auto;
+    line-height: 32px;
+    height: auto;
+    align-items: flex-start;
+
+    &.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+      line-height: inherit;
+    }
+  }
+}
+
+// 控件最大尺寸
+@max-width: 346px;
+
+.ant-picker {
+  max-width: @max-width;
+}
+
+.ant-input-affix-wrapper{
+  max-width: @max-width;
+}
+
+
+.ant-input {
+  max-width: @max-width;
+}
+
+.ant-select {
+  max-width: @max-width;
+}
+
+.ant-cascader {
+  max-width: @max-width;
+}
+
+.ant-select-multiple{
+  max-width: 100%;
+}
+
+
+// 在a-form里，出现
+
+.ant-form .ant-motion-collapse.ant-upload-list-item-container {
+  overflow: visible;
+  transition: opacity 0.3s, height 0.3s;
+}
+
+.ant-form .ant-upload-wrapper .ant-upload-list .ant-upload-list-item-container {
+  transition: opacity 0.3s, height 0.3s !important;
+}

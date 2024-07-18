@@ -1,0 +1,11 @@
+{
+  "name": "jsonformat",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "产品质量监督抽查产品分类与代码表": "node 产品质量监督抽查产品分类与代码表.js",
+    "region": "node region.js"
+  },
+  "author": "CGJ",
+  "license": "ISC"
+}

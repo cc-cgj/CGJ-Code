@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": ["es2023","ES2020", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowJs": true,
+
+    "baseUrl": "./",
+    "paths": {
+      "@/*":["./src/*"],
+      "dayjs": ["node_modules/dayjs/index.d.ts"],
+      "@ant-design/icons-vue": ["node_modules/@ant-design/icons-vue/lib/index.d.ts"]
+    }
+  },
+  "include": ["auto-imports.d.ts","src/**/*.ts", "src/**/*.tsx", "src/**/*.vue","src/**/*"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
